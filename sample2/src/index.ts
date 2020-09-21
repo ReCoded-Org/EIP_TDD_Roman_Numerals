@@ -1,10 +1,12 @@
 import prompts from "prompts";
 
+/* Instructions:
+   Try and fix the failing tests
+*/
+
 type Pair = [number, string];
 
 const numerals: Array<Pair> = [
-  [1000, "M"],
-  [900, "CM"],
   [500, "D"],
   [400, "CD"],
   [100, "C"],
@@ -23,13 +25,7 @@ export const toRoman = (num: number) => {
     throw new Error(`Please provide a number`);
   }
 
-  if (num >= 4000) {
-    throw new Error(
-      `Number ${num} is out of bounds. This only works for numbers less than 4000`
-    );
-  }
-
-  let result = "";
+  let result = " ";
   numerals.forEach((pair) => {
     const [int, char]: [number, string] = pair;
     while (num >= int) {
@@ -40,6 +36,10 @@ export const toRoman = (num: number) => {
 
   return result;
 };
+
+/* ######################################### */
+/*    Interactive run script (don't edit)    */
+/* ######################################### */
 
 if (process.env.NODE_ENV !== "test") {
   (async () => {

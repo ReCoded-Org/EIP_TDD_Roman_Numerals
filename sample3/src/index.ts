@@ -41,6 +41,10 @@ export const toRoman = (num: number) => {
   return result;
 };
 
+/* ######################################### */
+/*    Interactive run script (don't edit)    */
+/* ######################################### */
+
 if (process.env.NODE_ENV !== "test") {
   (async () => {
     const res = await prompts({
