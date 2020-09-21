@@ -11,7 +11,7 @@ The repository contains 4 samples of code to solve the roman numerals in Javascr
 
 * Sample 3: In this sample, you have a code template ready, do your own test driven implementation. Add more test cases, and then go and make them pass.
 
-* Sample 4: **Don't look at it!**
+* Sample 4: **Meadowful!**
 
 ---
 To run tests for a sample, just type:
