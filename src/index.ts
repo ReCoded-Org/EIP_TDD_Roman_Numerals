@@ -42,9 +42,9 @@ if (process.env.NODE_ENV !== "test") {
     });
 
     console.log(
-      `in Roman Numerals, the equivalent to ${res.input} is: ${toRoman(
+      `\nin Roman Numerals, the equivalent to ${res.input} is: ${toRoman(
         res.input
-      )}`
+      )}\n\n`
     );
   })();
 }
