@@ -9,6 +9,7 @@
 
     /* Specify library files to be included in the compilation. */ "allowJs": true /* Allow javascript files to be compiled. */,
     "outDir": "build" /* Redirect output structure to the directory. */,
+    "rootDir": "src",
 
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,
@@ -24,5 +25,5 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "src/tests"]
+  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }

@@ -6,28 +6,33 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "nodemon",
-    "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js",
-    "test": "jest",
-    "watch": "jest --watchAll"
+    "build:1": "rimraf ./sample1/build && tsc --project ./sample1/tsconfig.json",
+    "build:2": "rimraf ./sample2/build && tsc --project ./sample2/tsconfig.json",
+    "build:3": "rimraf ./sample3/build && tsc --project ./sample3/tsconfig.json",
+    "start:1": "npm run build:1 && node sample1/build/index.js",
+    "start:2": "npm run build:2 && node sample2/build/index.js",
+    "start:3": "npm run build:3 && node sample3/build/index.js",
+    "test:1": "jest -c sample1/jest.config.json",
+    "test:2": "jest -c sample2/jest.config.json",
+    "test:3": "jest -c sample3/jest.config.json",
+    "watch:1": "jest -c sample1/jest.config.json --watchAll",
+    "watch:2": "jest -c sample2/jest.config.json --watchAll",
+    "watch:3": "jest -c sample3/jest.config.json --watchAll"
   },
   "dependencies": {
     "jest": "^26.4.2",
     "prompts": "^2.3.2"
   },
   "devDependencies": {
-    "@types/prompts": "^2.0.9",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.1",
+    "@types/prompts": "^2.0.9",
     "babel-jest": "^26.3.0",
     "jest": "^26.4.2",
-    "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   }
 }
