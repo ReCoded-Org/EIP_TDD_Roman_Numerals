@@ -41,10 +41,6 @@ if (process.env.NODE_ENV !== "test") {
         isNaN(parseInt(input, 10)) ? `Please enter numbers only` : true,
     });
 
-    console.log(
-      `\nin Roman Numerals, the equivalent to ${res.input} is: ${toRoman(
-        res.input
-      )}\n\n`
-    );
+    console.log(`\nin Roman Numerals, that is: ${toRoman(res.input)}\n\n`);
   })();
 }
