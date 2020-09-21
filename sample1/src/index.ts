@@ -19,6 +19,16 @@ const numerals: Array<Pair> = [
 ];
 
 export const toRoman = (num: number) => {
+  if (typeof num !== "number" || isNaN(num)) {
+    throw new Error(`Please provide a number`);
+  }
+
+  if (num >= 4000) {
+    throw new Error(
+      `Number ${num} is out of bounds. This only works for numbers less than 4000`
+    );
+  }
+
   let result = "";
   numerals.forEach((pair) => {
     const [int, char]: [number, string] = pair;
@@ -41,6 +51,11 @@ if (process.env.NODE_ENV !== "test") {
         isNaN(parseInt(input, 10)) ? `Please enter numbers only` : true,
     });
 
-    console.log(`\nin Roman Numerals, that is: ${toRoman(res.input)}\n\n`);
+    try {
+      const result = toRoman(parseInt(res.input, 10));
+      console.log(`\nin Roman Numerals, that is: ${result}\n\n`);
+    } catch (err) {
+      console.log(err.message);
+    }
   })();
 }

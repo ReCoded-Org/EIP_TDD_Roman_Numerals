@@ -1,7 +1,7 @@
 import { toRoman } from "..";
 
 describe("The Roman Numerals Converter should", () => {
-  it("converts basic numbers to the right numeral", () => {
+  it("converts basic numbers to the right roman numeral", () => {
     expect(toRoman(1)).toBe("I");
     expect(toRoman(2)).toBe("II");
     expect(toRoman(3)).toBe("III");
@@ -11,6 +11,10 @@ describe("The Roman Numerals Converter should", () => {
     expect(toRoman(9)).toBe("IX");
     expect(toRoman(10)).toBe("X");
     expect(toRoman(20)).toBe("XX");
+  });
+
+  it("it returns an empty string for 0", () => {
+    expect(toRoman(0)).toBe("");
   });
 
   it("converts random cases the correct way", () => {
@@ -33,5 +37,17 @@ describe("The Roman Numerals Converter should", () => {
       const [num, expected]: [number, string] = pair;
       expect(toRoman(num)).toBe(expected);
     }
+  });
+
+  it("throws an error when called with arguments other than numbers", () => {
+    expect(() => toRoman(NaN)).toThrowError(/.*provide a number.*/gi);
+    expect(() => toRoman(null)).toThrowError(/.*provide a number.*/gi);
+  });
+
+  it("throws an error for numbers greater than or equal to 4000", () => {
+    expect(() => toRoman(4000)).toThrowError(/.*out of bounds.*/gi);
+    expect(() => toRoman(4001)).toThrowError(/.*out of bounds.*/gi);
+    expect(() => toRoman(5649)).toThrowError(/.*out of bounds.*/gi);
+    expect(() => toRoman(23832)).toThrowError(/.*out of bounds.*/gi);
   });
 });
