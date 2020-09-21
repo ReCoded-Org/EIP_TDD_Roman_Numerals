@@ -1,45 +1,35 @@
 import prompts from "prompts";
 
-type Pair = [number, string];
-
-const numerals: Array<Pair> = [
-  [1000, "M"],
-  [900, "CM"],
-  [500, "D"],
-  [400, "CD"],
-  [100, "C"],
-  [90, "XC"],
-  [50, "L"],
-  [40, "XL"],
-  [10, "X"],
-  [9, "IX"],
-  [5, "V"],
-  [4, "IV"],
-  [1, "I"],
-];
+/* Instructions:
+   1. run `yarn watch:1` now and observe the failing tests
+   2. check the failing test case, note the expected and received data
+   3. Look at the code and see if there is any pattern that can help you make the code pass
+*/
 
 export const toRoman = (num: number) => {
-  if (typeof num !== "number" || isNaN(num)) {
-    throw new Error(`Please provide a number`);
-  }
-
-  if (num >= 4000) {
-    throw new Error(
-      `Number ${num} is out of bounds. This only works for numbers less than 4000`
-    );
-  }
-
   let result = "";
-  numerals.forEach((pair) => {
-    const [int, char]: [number, string] = pair;
-    while (num >= int) {
-      result += char;
-      num -= int;
-    }
-  });
+
+  while (num >= 10) {
+    result += "X";
+    num -= 10;
+  }
+
+  while (num >= 5) {
+    result += "V";
+    num -= 5;
+  }
+
+  while (num >= 1) {
+    result += "I";
+    num -= 1;
+  }
 
   return result;
 };
+
+/* ######################################### */
+/*    Interactive run script (don't edit)    */
+/* ######################################### */
 
 if (process.env.NODE_ENV !== "test") {
   (async () => {
