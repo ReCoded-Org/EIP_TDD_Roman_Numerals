@@ -41,7 +41,7 @@ yarn start:1
 ```
 
 ```
-yarn build:4
+yarn build:0
 ```
 
 ```
