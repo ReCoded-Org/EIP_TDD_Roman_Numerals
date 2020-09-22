@@ -45,7 +45,7 @@ describe("The Roman Numerals Converter should", () => {
   });
 
   it("throws an error for numbers greater than or equal to 4000", () => {
-    expect(() => toRoman(4000)).toThrowError(OutOfBoundsError);
+    expect(() => toRoman(4000)).toThrow(OutOfBoundsError);
     expect(() => toRoman(4001)).toThrowError(/.*out of bounds.*/gi);
     expect(() => toRoman(5649)).toThrow();
   });
