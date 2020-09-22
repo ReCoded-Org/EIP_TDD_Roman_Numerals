@@ -3,15 +3,15 @@
 
 # Test driven development
 
-The repository contains 4 samples of code to solve the roman numerals in Javascript. Each sample has its problems.
+The repository contains 4 samples of code to solve the roman numerals in TypeScript (Supercharged Javascript). Each sample has its problems.
+
+* Sample 0: All green!
 
 * Sample 1: it has some basic start, a starter code with tests. *You need to complete the code to make the all tests pass*. **Don't add more tests**.
 
 * Sample 2: This one is harder, a very complicated tests cases have been added, but a great deal of the implementation code is already there. Just try to fix it to make the tests pass.
 
 * Sample 3: In this sample, you have a code template ready, do your own test driven implementation. Add more test cases, and then go and make them pass.
-
-* Sample 4: **Meadowful!**
 
 ---
 To run tests for a sample, just type:

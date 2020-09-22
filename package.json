@@ -6,25 +6,25 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build:0": "rimraf ./sample0/build && tsc --project ./sample0/tsconfig.json",
     "build:1": "rimraf ./sample1/build && tsc --project ./sample1/tsconfig.json",
     "build:2": "rimraf ./sample2/build && tsc --project ./sample2/tsconfig.json",
     "build:3": "rimraf ./sample3/build && tsc --project ./sample3/tsconfig.json",
-    "build:4": "rimraf ./sample4/build && tsc --project ./sample4/tsconfig.json",
 
+    "start:0": "npm run build:0 && node sample0/build/index.js",
     "start:1": "npm run build:1 && node sample1/build/index.js",
     "start:2": "npm run build:2 && node sample2/build/index.js",
     "start:3": "npm run build:3 && node sample3/build/index.js",
-    "start:4": "npm run build:4 && node sample4/build/index.js",
 
+    "test:0": "jest -c sample0/jest.config.json",
     "test:1": "jest -c sample1/jest.config.json",
     "test:2": "jest -c sample2/jest.config.json",
     "test:3": "jest -c sample3/jest.config.json",
-    "test:4": "jest -c sample4/jest.config.json",
 
+    "watch:0": "jest -c sample0/jest.config.json --watchAll",
     "watch:1": "jest -c sample1/jest.config.json --watchAll",
     "watch:2": "jest -c sample2/jest.config.json --watchAll",
     "watch:3": "jest -c sample3/jest.config.json --watchAll",
-    "watch:4": "jest -c sample4/jest.config.json --watchAll",
 
     "test:all": "jest"
   },
