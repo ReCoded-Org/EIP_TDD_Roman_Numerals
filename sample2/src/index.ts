@@ -4,9 +4,13 @@ import prompts from "prompts";
    Try and fix the failing tests
 */
 
+export class OutOfBoundsError extends Error { }
+
 type Pair = [number, string];
 
 const numerals: Array<Pair> = [
+  [1000, "M"],
+  [900, "CM"],
   [500, "D"],
   [400, "CD"],
   [100, "C"],
@@ -21,11 +25,12 @@ const numerals: Array<Pair> = [
 ];
 
 export const toRoman = (num: number) => {
-  if (typeof num !== "number" || isNaN(num)) {
-    throw new Error(`Please provide a number`);
-  }
+  // HINT: uncomment this line to try out throwing errors
+  // if (typeof num !== "number" || isNaN(num)) {
+  //   throw new Error(`Please provide a number`);
+  // }
 
-  let result = " ";
+  let result = "";
   numerals.forEach((pair) => {
     const [int, char]: [number, string] = pair;
     while (num >= int) {
