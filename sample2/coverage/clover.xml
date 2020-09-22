@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1600781321712" clover="3.2.0">
+  <project timestamp="1600781321712" name="All files">
+    <metrics statements="17" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="2" elements="25" coveredelements="13" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
+    <file name="index.ts" path="/Users/sherif/Documents/code/re-coded/EIP_TDD_Roman_Numerals/sample2/src/index.ts">
+      <metrics statements="17" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="2"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="33" count="23" type="stmt"/>
+      <line num="34" count="23" type="stmt"/>
+      <line num="35" count="299" type="stmt"/>
+      <line num="36" count="299" type="stmt"/>
+      <line num="37" count="64" type="stmt"/>
+      <line num="38" count="64" type="stmt"/>
+      <line num="42" count="23" type="stmt"/>
+      <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="61" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

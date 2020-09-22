@@ -1,4 +1,4 @@
-import { toRoman } from "..";
+import { toRoman, OutOfBoundsError } from "..";
 
 describe("The Roman Numerals Converter should", () => {
   it("converts basic numbers to the right roman numeral", () => {
@@ -40,14 +40,13 @@ describe("The Roman Numerals Converter should", () => {
   });
 
   it("throws an error when called with arguments other than numbers", () => {
-    expect(() => toRoman(NaN)).toThrowError(/.*provide a number.*/gi);
+    expect(() => toRoman(NaN)).toThrow();
     expect(() => toRoman(null)).toThrowError(/.*provide a number.*/gi);
   });
 
   it("throws an error for numbers greater than or equal to 4000", () => {
-    expect(() => toRoman(4000)).toThrowError(/.*out of bounds.*/gi);
+    expect(() => toRoman(4000)).toThrowError(OutOfBoundsError);
     expect(() => toRoman(4001)).toThrowError(/.*out of bounds.*/gi);
-    expect(() => toRoman(5649)).toThrowError(/.*out of bounds.*/gi);
-    expect(() => toRoman(23832)).toThrowError(/.*out of bounds.*/gi);
+    expect(() => toRoman(5649)).toThrow();
   });
 });

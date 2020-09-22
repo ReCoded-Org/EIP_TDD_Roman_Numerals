@@ -1,11 +1,24 @@
 import { toRoman } from "..";
 
-describe("The Roman Numerals Converter should", () => {
-  it("converts basic numbers to the right roman numeral", () => {
+describe("Roman Numerals Converter", () => {
+
+  it("handles basic numbers like 1", () => {
     expect(toRoman(1)).toBe("I");
+  })
+
+  it("handles basic numbers like 2", () => {
     expect(toRoman(2)).toBe("II");
+  })
+
+  it("handles basic numbers like 3", () => {
     expect(toRoman(3)).toBe("III");
+  })
+
+  xit("handles basic numbers like 4", () => {
     expect(toRoman(4)).toBe("IV");
+  })
+
+  xit("converts basic numbers to the right roman numeral", () => {
     expect(toRoman(5)).toBe("V");
     expect(toRoman(6)).toBe("VI");
     expect(toRoman(9)).toBe("IX");
@@ -13,11 +26,13 @@ describe("The Roman Numerals Converter should", () => {
     expect(toRoman(20)).toBe("XX");
   });
 
-  it("it returns an empty string for 0", () => {
-    expect(toRoman(0)).toBe("");
-  });
+  xdescribe("handles edge cases", () => {
+    it("returns an empty string for 0", () => {
+      expect(toRoman(0)).toBe("");
+    });
+  })
 
-  it("converts random cases the correct way", () => {
+  xit("converts random cases the correct way", () => {
     type Pair = [number, string];
     const cases: Array<Pair> = [
       [3781, "MMMDCCLXXXI"],
@@ -39,15 +54,17 @@ describe("The Roman Numerals Converter should", () => {
     }
   });
 
-  it("throws an error when called with arguments other than numbers", () => {
-    expect(() => toRoman(NaN)).toThrowError(/.*provide a number.*/gi);
-    expect(() => toRoman(null)).toThrowError(/.*provide a number.*/gi);
-  });
+  describe("handles exceptional cases", () => {
+    xit("throws an error when called with arguments other than numbers", () => {
+      expect(() => toRoman(NaN)).toThrowError(/.*provide a number.*/gi);
+      expect(() => toRoman(null)).toThrowError(/.*provide a number.*/gi);
+    });
 
-  it("throws an error for numbers greater than or equal to 4000", () => {
-    expect(() => toRoman(4000)).toThrowError(/.*out of bounds.*/gi);
-    expect(() => toRoman(4001)).toThrowError(/.*out of bounds.*/gi);
-    expect(() => toRoman(5649)).toThrowError(/.*out of bounds.*/gi);
-    expect(() => toRoman(23832)).toThrowError(/.*out of bounds.*/gi);
-  });
+    xit("throws an error for numbers greater than or equal to 4000", () => {
+      expect(() => toRoman(4000)).toThrowError(/.*out of bounds.*/gi);
+      expect(() => toRoman(4001)).toThrowError(/.*out of bounds.*/gi);
+      expect(() => toRoman(5649)).toThrowError(/.*out of bounds.*/gi);
+      expect(() => toRoman(23832)).toThrowError(/.*out of bounds.*/gi);
+    });
+  })
 });
